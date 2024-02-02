@@ -67,3 +67,11 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.3"
+
+gem "view_components", "~> 0.1.0"
+gem "lookbook", "~> 2.2"
+
+group :development do
+  gem "listen"
+  gem "actioncable"
+end
