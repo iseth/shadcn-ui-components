@@ -1,9 +1,9 @@
 // // For importing tailwind styles from phlex_ui/phlex_ui_pro gem
-// const execSync = require('child_process').execSync;
+const execSync = require('child_process').execSync;
 
 // // Import phlex_ui gem path (To make sure Tailwind loads classes used by phlex_ui gem)
-// const outputPhlexUI = execSync('bundle show phlex_ui', { encoding: 'utf-8' });
-// const phlex_ui_path = outputPhlexUI.trim() + '/**/*.rb';
+const outputPhlexUI = execSync('bundle show phlex_ui', { encoding: 'utf-8' });
+const phlex_ui_path = outputPhlexUI.trim() + '/**/*.rb';
 
 // // Import phlex_ui_pro gem path (To make sure Tailwind loads classes used by phlex_ui_pro gem)
 // const outputPhlexUIPro = execSync('bundle show phlex_ui_pro', { encoding: 'utf-8' });
@@ -14,6 +14,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   darkMode: ["class"],
   content: [
+    './app/views/**/*.rb',
+    './app/components/**/*rb',
     './app/views/**/*.{erb,haml,html,slim,rb}',
     './app/helpers/**/*.rb',
     './app/assets/stylesheets/**/*.css',
@@ -22,7 +24,7 @@ module.exports = {
     './app/components/**/*.erb',
     './app/components/*.rb',
     './app/components/**/*.rb',
-    // phlex_ui_path,
+    phlex_ui_path,
     // phlex_ui_pro_path
   ],
   theme: {

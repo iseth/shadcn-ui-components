@@ -1,0 +1,11 @@
+{
+  "name": "shadcn-ui-components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/iseth/shadcn-ui-components.git",
+  "author": "nelsonhernandez20 <nelsonhernandez335@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "motion": "^10.17.0"
+  }
+}
