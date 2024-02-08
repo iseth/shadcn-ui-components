@@ -1,4 +1,4 @@
-class ButtonBComponent < ViewComponent::Base
+class PhlexButtonComponent < ViewComponent::Base
   def initialize(text:, variant: :primary, icon: nil, disabled: false, type: :button)
     @text = text
     @variant = variant

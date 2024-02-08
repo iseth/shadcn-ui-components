@@ -1,8 +1,8 @@
-class MyViewComponent < ViewComponent::Base
+class PhlexAccordionComponent < ViewComponent::Base
     def initialize(items)
       @items = items
     end
-  
+
     def call
       render PhlexUI::Accordion::Builder.new do |accordion|
         @items.each do |item|
@@ -11,4 +11,3 @@ class MyViewComponent < ViewComponent::Base
       end
     end
   end
-  

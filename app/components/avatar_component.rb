@@ -1,20 +1,18 @@
 class AvatarComponent < ViewComponent::Base
+
+  SIZES = {
+    xs: "h-4 w-4 text-[0.5rem]",
+    sm: "h-6 w-6 text-xs",
+    md: "h-10 w-10 text-base",
+    lg: "h-14 w-14 text-xl",
+    xl: "h-20 w-20 text-3xl"
+  }
+
   def initialize(src: nil, alt: nil, initials: nil, size: :md)
     @src = src
     @alt = alt
     @initials = initials || "JD"
-    @size = size
+    @size = SIZES[size]
   end
 
-  def call
-    puts "SRC: #{@src}" # Imprime el valor de src
-    render PhlexUI::Avatar.new(size: @size) do
-      if @src
-        puts "entro"
-        render PhlexUI::Avatar::Image.new(src: @src, alt: @alt || "Avatar")
-      else
-        render PhlexUI::Avatar::Fallback.new { @initials }
-      end
-    end
-  end
 end
