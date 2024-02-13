@@ -4,13 +4,7 @@ class AspectRatioComponent < ViewComponent::Base
     @image_path = image_path
   end
 
-  def call
-    render PhlexUI::AspectRatio.new(aspect_ratio: @aspect_ratio, class: "rounded-md overflow-hidden border shadow-sm") do
-      tag.img(
-        alt: "Placeholder",
-        loading: "lazy",
-        src: helpers.image_path(@image_path)
-      )
-    end
+  def padding_bottom
+    @aspect_ratio.split("/").map(&:to_f).reverse.reduce(&:fdiv) * 100
   end
 end
