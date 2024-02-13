@@ -7,4 +7,30 @@ class AccordionComponentPreview < ViewComponent::Preview
       { title: "Item 3", content: "Content 3" }
     ]))
   end
+
+  def default1
+    render Accordion::BuilderComponent.new do |accordion|
+      accordion.add_item("Item 1", "Content 1")
+      accordion.add_item("Item 2", "Content 2")
+      accordion.add_item("Item 3", "Content 3")
+    end
+  end
+
+  def builder_component
+  end
+
+  def item_component
+  end
+
+  def trigger
+  end
+
+  def default_trigger
+  end
+
+  def content_preview
+  end
+
+  def default_content
+  end
 end

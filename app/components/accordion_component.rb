@@ -1,5 +1,7 @@
 class AccordionComponent < ViewComponent::Base
-  def initialize(items)
-    @items = items
+  renders_many :items, Accordion::ItemComponent
+
+  def initialize()
+    # @items = items
   end
 end
