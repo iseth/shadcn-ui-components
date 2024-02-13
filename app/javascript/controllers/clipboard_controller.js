@@ -1,13 +1,14 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 import tippy from "tippy.js";
 
 // Connects to data-controller="accordion"
 export default class extends Controller {
-  static targets = ['trigger', 'source', 'successPopover', 'errorPopover']
+  static targets = ["trigger", "source", "successPopover", "errorPopover"];
 
   connect() {
-    this.tippySuccess = this.initializeTippy('success');
-    this.tippyError = this.initializeTippy('error');
+    console.log("conectado");
+    this.tippySuccess = this.initializeTippy("success");
+    this.tippyError = this.initializeTippy("error");
   }
 
   disconnect() {
@@ -21,12 +22,18 @@ export default class extends Controller {
       this.showErrorPopover();
       return;
     }
-    let textToCopy = sourceElement.tagName === 'INPUT' ? sourceElement.value : sourceElement.innerText;
-    navigator.clipboard.writeText(textToCopy).then(() => {
-      this.showSuccessPopover();
-    }).catch(() => {
-      this.showErrorPopover();
-    })
+    let textToCopy =
+      sourceElement.tagName === "INPUT"
+        ? sourceElement.value
+        : sourceElement.innerText;
+    navigator.clipboard
+      .writeText(textToCopy)
+      .then(() => {
+        this.showSuccessPopover();
+      })
+      .catch(() => {
+        this.showErrorPopover();
+      });
   }
 
   showSuccessPopover() {
@@ -48,12 +55,13 @@ export default class extends Controller {
   }
 
   initializeTippy(type) {
-    let tippyElement = type === 'success' ? this.successPopoverTarget : this.errorPopoverTarget;
+    let tippyElement =
+      type === "success" ? this.successPopoverTarget : this.errorPopoverTarget;
     const options = {
       content: tippyElement.innerHTML,
       allowHTML: true,
       interactive: false,
-      trigger: 'manual',
+      trigger: "manual",
     };
 
     return tippy(this.triggerTarget, options);

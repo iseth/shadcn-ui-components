@@ -170,17 +170,20 @@ class CodeblockComponent < ViewComponent::Base
   end
 
   def codeblock
-    content_tag :div, data: { clipboard_target: "source" } do
-      content_tag :div, **@attrs do
-        content_tag :div, class: "after:content-none" do
-          content_tag :pre do
-            FORMATTER.format(lexer.lex(@code)).html_safe
+    content_tag :div, data: { controller: "clipboard", clipboard_success_value:"Copied!", clipboard_error_value:"Copy failed!"}, class:"relative" do
+      content_tag :div do
+        content_tag :div, data: { clipboard_target: "source" } do
+          content_tag :div, **@attrs do
+            content_tag :div, class: "after:content-none" do
+              content_tag :pre do
+                FORMATTER.format(lexer.lex(@code)).html_safe
+              end
+            end
           end
         end
       end
     end
   end
-
   def lexer
     Rouge::Lexer.find(@syntax)
   end
