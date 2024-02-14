@@ -1,3 +1,9 @@
 <div class="border-b" data-controller="accordion" data-accordion-open-value="<%= @open %>" data-accordion-rotate-icon-value="<%= @rotate_icon %>">
-  <%= content %>
+  <%= trigger %>
+
+  <%= content_tag :div, class: "overflow-hidden transition-all" do %>
+    <%= content_tag :div, class: "py-4" do %>
+      <%= body %>
+    <% end %>
+  <% end %>
 </div>

@@ -1,9 +1,13 @@
-<%= render Accordion::ItemComponent.new(open: "false") do %>
-  <%= render Accordion::TriggerComponent.new do %>
-    <%= render(Accordion::DefaultTriggerComponent.new) { "Title" } %>
+<%= render Accordion::ItemComponent.new(open: "false") do |component| %>
+  <%= component.with_trigger do |trigger| %>
+    <%= trigger.with_default_trigger do %>
+      Title000
+    <% end %>
   <% end %>
 
-  <%= render Accordion::ContentComponent.new do %>
-    <%= render(Accordion::DefaultContentComponent.new) { "contentssss" } %>
+  <%= component.with_body do |body| %>
+    <%= body.with_default_content do %>    
+      Content
+    <% end %>
   <% end %>
 <% end %>
