@@ -1,13 +1,11 @@
 class Alert::BuilderAlertComponent < ViewComponent::Base
   renders_one :title
   renders_one :description
+  renders_one :icon
 
-  def initialize(variant: nil, title: nil, description: nil)
+  def initialize(variant: nil)
+    @variant = variant
     @variant_class = colors
-    @title = title
-    @description = description
-    puts "Title: #{@title}"
-    puts "Description: #{@description}"
   end
 
   def colors

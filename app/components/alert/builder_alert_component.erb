@@ -1,8 +1,9 @@
 <div class="backdrop-blur relative w-full ring-1 ring-inset rounded-lg px-4 py-4 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-8 <%=@variant_class%>">
+    <%= icon %>
     <%= render Alert::TitleComponent.new do %>
-     <%=@title%>
+     <%= title %>
     <% end %>
     <%= render Alert::DescriptionComponent.new do %>
-      <div class="text-sm [&_p]:leading-relaxed"><%=@description%></div>
+      <div class="text-sm [&_p]:leading-relaxed"><%= description %></div>
     <% end %>
 </div>
