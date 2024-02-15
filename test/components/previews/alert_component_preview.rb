@@ -9,6 +9,14 @@ class AlertComponentPreview < ViewComponent::Preview
     )
   end
 
+  def default1
+    render(Alert::BuilderAlertComponent.new(
+      variant: :warning,
+      title: "Título de la alerta",
+      description: "Descripción de la alerta"
+    ))
+  end
+
   def with_without_icon
     render AlertComponent.new(
       title: "Pro tip",
