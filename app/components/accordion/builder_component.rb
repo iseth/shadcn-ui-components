@@ -1,51 +1,29 @@
 class Accordion::BuilderComponent < ViewComponent::Base
-  # renders_many :items, Accordion::ItemComponent
-  renders_many :items, -> (title, content_text, open: false) do
-    # binding.pry
+  renders_many :items, -> (title, content_text, open: false, &block) do
     @open = open
-    # Accordion::DefaultTriggerComponent.new { "title" }
-    add_item(title, content_text)
 
-    # Accordion::DefaultTriggerComponent.new do
-    #   "aa"
-    # end
-    # Accordion::ItemComponent.new(open: @open) do
-    #   Accordion::TriggerComponent.new do
-    #     Accordion::DefaultTriggerComponent.new { title }
-    #   end
-    #   Accordion::ContentComponent.new do
-    #     Accordion::DefaultContentComponent.new { content }
-    #   end
-    # end
-  end
+    AccordionComponent.new do |accordion|
+      accordion.with_item(open: false) do |component|
+        component.with_trigger do |trigger|
+          trigger.with_default_trigger do
+            Title000
+          end
+        end
 
-  def add_item(title, content_text, open: false)
-    @open = open
-    render Accordion::ItemComponent.new(open: false) do |component|
-      # "ssssssssssssss"
-      # "pppppppppppppp"
-
-      # render Accordion::TriggerComponent.new do
-      #   render(Accordion::DefaultTriggerComponent.new) { title }
-      # end
-      # render Accordion::ContentComponent.new do
-      #   render(Accordion::DefaultContentComponent.new) { content_text }
-      # end
+        component.with_body do |body|
+          body.with_default_content do
+            Content
+          end
+        end
+      end
     end
+
+    # add_item(title, content_text, open: open, &block)
   end
 
-  def initialize()
-
+  def initialize
   end
 
-  # def add_item(title, content, open: false)
-  #   render Accordion::ItemComponent.new(open: open) do
-  #     render Accordion::TriggerComponent.new do
-  #       render(Accordion::DefaultTriggerComponent.new) { title }
-  #     end
-  #     render Accordion::ContentComponent.new do
-  #       render(Accordion::DefaultContentComponent.new){ content }
-  #     end
-  #   end
-  # end
+  def add_item(title, content_text, open: false, &block)
+  end
 end

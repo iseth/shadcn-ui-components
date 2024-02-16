@@ -1,10 +1,11 @@
 class AccordionComponent < ViewComponent::Base
-  renders_many :items, ->(title:, body:) do
-    Accordion::ItemComponent.new
-    # PostComponent.new(title: title, classes: "my-default-class " + classes)
+  renders_many :items, -> (open: false, rotate_icon: 180, **attrs, &block) do
+    Accordion::ItemComponent.new(open, rotate_icon, attrs, &block)
   end
 
-  def initialize()
-    # @items = items
+  def initialize(attrs = {}, &block)
+    @attrs = attrs
+    @attrs[:class] = "w-full" if @attrs&.dig(:class).nil?
+    @content = block
   end
 end

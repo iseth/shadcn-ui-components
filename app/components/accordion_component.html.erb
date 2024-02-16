@@ -1,6 +1,3 @@
-<div class="w-full">
-  <% items.each do |item| %>
-    <%= item %>
-  <% end %>
-  <%# content %>
+<div class="<%= @attrs[:class] %>">
+  <%= content %>
 </div>
