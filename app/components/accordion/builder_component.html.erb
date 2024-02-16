@@ -1,7 +1,5 @@
 <%= render AccordionComponent.new do |accordion| %>
   <% items.each do |item| %>
-    <%= accordion.with_item(open: false) do |component| %>
-      <%= item %>
-    <% end %>
+    <%= item %>
   <% end %>
 <% end %>
