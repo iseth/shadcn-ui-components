@@ -2,9 +2,9 @@
 class AccordionComponentPreview < ViewComponent::Preview
   def default
     render Accordion::BuilderComponent.new do |accordion|
-      accordion.add_item("Item 1", "Content 1")
-      accordion.add_item("Item 2", "Content 2")
-      accordion.add_item("Item 3", "Content 3")
+      accordion.with_item("Item 1", "Content 1")
+      accordion.with_item("Item 2", "Content 2")
+      accordion.with_item("Item 3", "Content 3")
     end
   end
 
