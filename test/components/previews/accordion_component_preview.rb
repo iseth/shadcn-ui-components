@@ -1,19 +1,14 @@
 # app/components/previews/my_view_component_preview.rb
 class AccordionComponentPreview < ViewComponent::Preview
   def default
-    render(AccordionComponent.new([
-      { title: "Item 1", content: "Content 1" },
-      { title: "Item 2", content: "Content 2" },
-      { title: "Item 3", content: "Content 3" }
-    ]))
+    render Accordion::BuilderComponent.new do |accordion|
+      accordion.with_item("Item 1", "Content 1")
+      accordion.with_item("Item 2", "Content 2")
+      accordion.with_item("Item 3", "Content 3")
+    end
   end
 
-  def default1
-    render Accordion::BuilderComponent.new do |accordion|
-      accordion.add_item("Item 1", "Content 1")
-      accordion.add_item("Item 2", "Content 2")
-      accordion.add_item("Item 3", "Content 3")
-    end
+  def custom
   end
 
   def builder_component
