@@ -1,0 +1,4 @@
+<%= render Accordion::BuilderComponent.new do |accordion| %>
+  <%= accordion.with_item("Item 1", "Content 1") %>
+  <%= accordion.with_item("Item 2", "Content 2", open: true) %>
+<% end %>

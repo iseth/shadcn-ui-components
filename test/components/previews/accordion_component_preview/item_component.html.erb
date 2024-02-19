@@ -1,0 +1,13 @@
+<%= render Accordion::ItemComponent.new(open: "false") do |component| %>
+  <%= component.with_trigger do |trigger| %>
+    <%= trigger.with_default_trigger do %>
+      Title000
+    <% end %>
+  <% end %>
+
+  <%= component.with_body do |body| %>
+    <%= body.with_default_content do %>    
+      Content
+    <% end %>
+  <% end %>
+<% end %>

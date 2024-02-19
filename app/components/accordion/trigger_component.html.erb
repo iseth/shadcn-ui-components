@@ -1,0 +1,4 @@
+<%= content_tag :button, class: @attrs[:class], data: {action: "click->accordion#toggle"} do %>
+  <%= default_trigger %>
+  <%= content %>
+<% end %>
