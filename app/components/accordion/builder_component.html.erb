@@ -3,22 +3,3 @@
     <%= item %>
   <% end %>
 <% end %>
-
-
-<%= render AccordionComponent.new do |accordion| %>
-  <%= accordion.with_item(title: "Item 1", body: "Content 1") %>
-<% end %>
-
-<%= render Accordion::ItemComponent.new(open: "false") do |component| %>
-  <%= component.with_trigger do |trigger| %>
-    <%= trigger.with_default_trigger do %>
-      TitleAAA
-    <% end %>
-  <% end %>
-
-  <%= component.with_body do |body| %>
-    <%= body.with_default_content do %>    
-      Contentsss
-    <% end %>
-  <% end %>
-<% end %>
