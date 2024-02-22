@@ -51,7 +51,7 @@ class ButtonComponentPreview < ViewComponent::Preview
   end
 
 
-  def link
+  def icon
     render(ButtonComponent.new(variant: :outline,icon: true)) do |component|
       component.with_dataIcon do
         tag.svg xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", class: "w-5 h-5" do
@@ -96,7 +96,7 @@ class ButtonComponentPreview < ViewComponent::Preview
   end
 
   def custom
-    render(ButtonComponent.new(icon:true, position: 'right',class: 'whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-destructive text-primary-foreground shadow hover:bg-primary/90')) do |component|
+    render(ButtonComponent.new(icon:true, position: 'right',class: 'whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-destructive	text-primary-foreground shadow hover:bg-primary/90')) do |component|
       component.with_data do
         "Click me"
       end
