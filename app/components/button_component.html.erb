@@ -1,3 +1,9 @@
-<button class="whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 <%= @size_classes %>">
-  <%= content %>
+<button <%= 'disabled' if @disabled %> <%='type="' + @type + '"' unless @type.nil?%> class='<%=@attrs[:class]%> <%= @size_classes %>'>
+<% if @icon && @position.nil? || @position != 'right' %>
+  <%= dataIcon %>
+<%end%>
+  <%= data %>
+<%if @icon && @position === 'right'%>
+  <%= dataIcon %>
+<%end%>
 </button>
