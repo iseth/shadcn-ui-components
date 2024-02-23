@@ -1,9 +1,9 @@
 class AlertDialogComponent < ViewComponent::Base
-  def initialize(trigger_text:, title:, description:, cancel_text:, action_text:)
-    @trigger_text = trigger_text
-    @title = title
-    @description = description
-    @cancel_text = cancel_text
-    @action_text = action_text
+  renders_one :trigger, -> (**attrs, &block) do
+    AlertDialog::TriggerComponent.new(attrs, &block)
+  end
+  def initialize(open: false, **attrs)
+    @attrs = attrs
+    @attrs[:class] ||= "inline-block"
   end
 end
