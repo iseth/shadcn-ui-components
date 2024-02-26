@@ -1,3 +1,7 @@
-<div data-controller="alert-dialog" class="<%= @attrs[:class] %>">
-<%= content %>
+<div data-controller="alert-dialog" class="inline-block">
+  <div data-action="click->alert-dialog#open" class="inline-block">
+    <%= trigger %>
+    <template data-alert-dialog-target="content">
+      <%= data%>
+  </div>
 </div>

@@ -1,11 +1,12 @@
 class AlertDialogComponentPreview < ViewComponent::Preview
   def default
-    render AlertDialogComponent.new(
-      trigger_text: "Click me",
-      title: "Are you sure?",
-      description: "This action cannot be undone.",
-      cancel_text: "No, go back",
-      action_text: "Yes, continue"
-    )
+    render(AlertDialogComponent.new) do |component|
+      component.with_trigger(variant: :primary) do
+        'click me'
+      end
+      component.with_data do
+        'hola'
+      end
+    end
   end
 end
