@@ -1,9 +1,9 @@
-<div class="backdrop-blur relative w-full ring-1 ring-inset rounded-lg px-4 py-4 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-8 <%= @variant_class %>">
+<div class="<%=@attrs[:class]%> <%= @variant_class %>">
   <%= icon %>
-  <%= render Alert::TitleComponent.new do %>
+  <%= render Alert::TitleComponent.new(class_title: @attrs[:classTitle]) do %>
       <%= title %>
   <% end %>
-  <%= render Alert::DescriptionComponent.new do %>
-    <div class="text-sm [&_p]:leading-relaxed"><%= description %></div>
+  <%= render Alert::DescriptionComponent.new(class_description: @attrs[:classDescription]) do %>
+    <%= description %>
   <% end %>
 </div>

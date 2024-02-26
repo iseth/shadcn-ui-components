@@ -3,9 +3,13 @@ class Alert::BuilderAlertComponent < ViewComponent::Base
   renders_one :description
   renders_one :icon
 
-  def initialize(variant: nil)
+  def initialize(variant: nil, **attrs)
     @variant = variant
     @variant_class = colors
+    @attrs = attrs
+    @attrs[:class] ||= "backdrop-blur relative w-full ring-1 ring-inset rounded-lg px-4 py-4 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-8"
+    @attrs[:classTitle] ||= "mb-1 font-medium leading-none tracking-tight"
+    @attrs[:classDescription] ||= "text-sm [&_p]:leading-relaxed"
   end
 
   def colors
