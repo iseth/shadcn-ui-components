@@ -155,7 +155,7 @@ class BadgeComponentPreview < ViewComponent::Preview
   end
 
   def custom
-    render BadgeComponent.new(variant: :primary, size: :sm, class: "inline-flex items-center rounded-md font-medium ring-1 ring-inset")do
+    render BadgeComponent.new(variant: :primary, size: :sm, class: "inline-flex items-center rounded-md font-medium ring-1 ring-inset text-destructive bg-purple-500/10")do
     "Click me"
     end
   end

@@ -41,8 +41,11 @@ class BadgeComponent < ViewComponent::Base
     @variant =  VARIANTS[variant]
     @size = SIZES[size]
     @attrs = attrs
-    @attrs[:class] ||= "inline-flex items-center rounded-md font-medium ring-1 ring-inset"
+    if @attrs[:class].nil?
+      @attrs[:class] = "inline-flex items-center rounded-md font-medium ring-1 ring-inset #{@size} #{@variant}"
+    else
+      @attrs[:class] = "#{@size} #{@attrs[:class]}"
+    end
   end
-
 
 end
