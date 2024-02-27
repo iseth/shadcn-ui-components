@@ -65,5 +65,4 @@ class AlertComponentPreview < ViewComponent::Preview
     )
   end
 
-  # ... puedes agregar más vistas previas aquí ...
 end
