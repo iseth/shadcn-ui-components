@@ -4,7 +4,7 @@ class BuilderAspectRatioComponentTest < ViewComponent::TestCase
 
   test "renders aspect ratio component with custom class" do
     render_inline(AspectRatio::BuilderAspectRatioComponent.new(aspect_ratio: "16/9", class: "custom-class")) do |component|
-      component.with_image { "Imagen" }
+      component.with_image { "Image" }
     end
 
     assert_selector(".custom-class")

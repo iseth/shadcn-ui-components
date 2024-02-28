@@ -1,10 +1,4 @@
 class AspectRatioComponentPreview < ViewComponent::Preview
-  # def default
-  #   render AspectRatioComponent.new(
-  #     aspect_ratio: "16/9",
-  #     image_path: 'image-test.jpg'
-  #   )
-  # end
 
   def default
     @image_path = "/assets/image-test.jpg"
