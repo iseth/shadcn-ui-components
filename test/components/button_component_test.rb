@@ -1,12 +1,30 @@
-# frozen_string_literal: true
-
 require "test_helper"
 
 class ButtonComponentTest < ViewComponent::TestCase
-  def test_component_renders_something_useful
-    # assert_equal(
-    #   %(<span>Hello, components!</span>),
-    #   render_inline(ButtonComponent.new(message: "Hello, components!")).css("span").to_html
-    # )
+  test "renders button with custom class" do
+    render_inline(ButtonComponent.new(variant: :primary, class: "custom-class")) do |component|
+      component.with_data { "Click me" }
+    end
+
+    assert_selector(".custom-class")
   end
+
+  test "renders button with icon" do
+    render_inline(ButtonComponent.new(variant: :primary, icon: "icon-class")) do |component|
+      component.with_data { "Click me" }
+      component.with_dataIcon { "Icono" }
+    end
+
+    assert_text("Icono")
+  end
+
+  test "renders disabled button" do
+    render_inline(ButtonComponent.new(variant: :primary, disabled: true)) do |component|
+      component.with_data { "Click me" }
+    end
+
+    assert_selector("[disabled]")
+  end
+
+
 end
