@@ -12,10 +12,10 @@ class ButtonComponentTest < ViewComponent::TestCase
   test "renders button with icon" do
     render_inline(ButtonComponent.new(variant: :primary, icon: "icon-class")) do |component|
       component.with_data { "Click me" }
-      component.with_dataIcon { "Icono" }
+      component.with_dataIcon { "Icon" }
     end
 
-    assert_text("Icono")
+    assert_text("Icon")
   end
 
   test "renders disabled button" do
