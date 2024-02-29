@@ -8,14 +8,12 @@
         <p class="font-medium">What is PhlexUI</p>
       </div>
     <% end %>
-
-		<%= item.with_body do %>
+    <%= item.with_body do %>
       <p class="pl-16 pr-4 pb-4 text-muted-foreground">
         PhlexUI is a UI component library for Ruby devs who want to build better, faster.
       </p>
     <% end %>
   <% end %>
-
   <%= accordion.with_item(class: "data-[accordion-open-value=true]:bg-muted hover:bg-muted rounded-lg pb-3", rotate_icon: 135) do |item| %>
     <%= item.with_trigger(class: "w-full rounded-lg") do |trigger| %>
       <div class="p-6 pb-3 pl-16 relative text-left">
@@ -25,8 +23,7 @@
         <p class="font-medium">Can I use it with Rails?</p>
       </div>
     <% end %>
-
-		<%= item.with_body do %>
+    <%= item.with_body do %>
       <p class="pl-16 pr-4 pb-4 text-muted-foreground">
         Yes, PhlexUI is pure Ruby and works great with Rails. It's a Ruby gem that you can install into your Rails app.
       </p>
