@@ -2,7 +2,7 @@ class PhlexAlertComponent < ViewComponent::Base
   def initialize(title:, description:, variant: nil, icon: nil)
     @title = title
     @description = description
-    @variant = variant.nil? ? nil : variant.to_sym
+    @variant = variant.to_sym if variant.nil?
     @icon = icon
   end
 
@@ -15,6 +15,6 @@ class PhlexAlertComponent < ViewComponent::Base
   private
 
   def render_icon
-    @icon.call if @icon
+    @icon&.call
   end
 end

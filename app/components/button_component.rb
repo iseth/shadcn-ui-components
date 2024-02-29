@@ -22,7 +22,7 @@ class ButtonComponent < ViewComponent::Base
     @disabled = disabled
     @attrs[:class] ||= VARIANTS[@variant]
 
-    @other_attrs = @attrs.except(:class).map{ |k, v| "#{k}=\"#{v}\""}.join(" ")
+    @other_attrs = @attrs.except(:class).map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
   end
 
   # private

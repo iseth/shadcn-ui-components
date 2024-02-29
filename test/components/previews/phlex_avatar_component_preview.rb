@@ -60,5 +60,4 @@ class PhlexAvatarComponentPreview < ViewComponent::Preview
       size: :xl
     )
   end
-
 end

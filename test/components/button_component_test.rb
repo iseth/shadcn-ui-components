@@ -25,6 +25,4 @@ class ButtonComponentTest < ViewComponent::TestCase
 
     assert_selector("[disabled]")
   end
-
-
 end

@@ -17,7 +17,7 @@ class AccordionComponentPreview < ViewComponent::Preview
   def item_component
     # render Accordion::ItemComponent.new(open: "false") do |component|
     #   component.with_trigger do
-        
+
     #     render(Accordion::DefaultTriggerComponent.new) { "Title" }
     #   end
     #   # render Accordion::TriggerComponent.new do

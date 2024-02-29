@@ -1,11 +1,10 @@
 class AlertComponent < ViewComponent::Base
-
   def initialize(title:, description:, variant: nil, icon: nil)
     @title = title
     @description = description
-    @variant = variant.nil? ? nil : variant.to_sym
+    @variant = variant.to_sym if variant.nil?
     @icon = icon
-    @variant_class= colors
+    @variant_class = colors
   end
 
   def colors
@@ -20,5 +19,4 @@ class AlertComponent < ViewComponent::Base
       "ring-destructive/20 bg-destructive/5 text-destructive [&>svg]:text-destructive/80"
     end
   end
-
 end
