@@ -76,7 +76,7 @@ class ButtonComponentPreview < ViewComponent::Preview
   end
 
   def submit
-    render(ButtonComponent.new(variant: :primary,icon: true,type: :submit)) do |component|
+    render(ButtonComponent.new(variant: :primary, icon: true, type: :submit)) do |component|
       "Click me"
     end
   end
