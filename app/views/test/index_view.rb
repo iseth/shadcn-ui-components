@@ -2,12 +2,12 @@
 
 class Test::IndexView < ApplicationView
   def template
-    render PhlexUI::Accordion.new(class: 'space-y-1') do
+    render PhlexUI::Accordion.new(class: "space-y-1") do
       render PhlexUI::Accordion::Item.new(
-              class!:
-                "data-[accordion-open-value=true]:bg-muted hover:bg-muted rounded-lg pb-3",
-              rotate_icon: 135
-            ) do
+        class!:
+          "data-[accordion-open-value=true]:bg-muted hover:bg-muted rounded-lg pb-3",
+        rotate_icon: 135
+      ) do
         render PhlexUI::Accordion::Trigger.new(class!: "w-full rounded-lg") do
           div(class: "p-6 pb-3 pl-16 relative text-left") do
             render PhlexUI::Accordion::Icon.new(class: "absolute left-6 top-6") do
@@ -38,10 +38,10 @@ class Test::IndexView < ApplicationView
       end
 
       render PhlexUI::Accordion::Item.new(
-              class!:
-                "data-[accordion-open-value=true]:bg-muted hover:bg-muted rounded-lg pb-3",
-              rotate_icon: 135
-            ) do
+        class!:
+          "data-[accordion-open-value=true]:bg-muted hover:bg-muted rounded-lg pb-3",
+        rotate_icon: 135
+      ) do
         render PhlexUI::Accordion::Trigger.new(class!: "w-full rounded-lg") do
           div(class: "p-6 pb-3 pl-16 relative text-left") do
             render PhlexUI::Accordion::Icon.new(class: "absolute left-6 top-6") do

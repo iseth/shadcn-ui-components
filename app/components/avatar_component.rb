@@ -1,5 +1,4 @@
 class AvatarComponent < ViewComponent::Base
-
   SIZES = {
     xs: "h-4 w-4 text-[0.5rem]",
     sm: "h-6 w-6 text-xs",
@@ -14,5 +13,4 @@ class AvatarComponent < ViewComponent::Base
     @initials = initials || "JD"
     @size = SIZES[size]
   end
-
 end

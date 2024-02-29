@@ -1,5 +1,4 @@
 class AspectRatioComponentPreview < ViewComponent::Preview
-
   def default
     @image_path = "/assets/image-test.jpg"
 
@@ -39,5 +38,4 @@ class AspectRatioComponentPreview < ViewComponent::Preview
       end
     end
   end
-
 end

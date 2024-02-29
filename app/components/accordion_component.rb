@@ -1,8 +1,8 @@
 class AccordionComponent < ViewComponent::Base
-  renders_one :trigger, -> (**attrs, &block) do
+  renders_one :trigger, ->(**attrs, &block) do
     Accordion::TriggerComponent.new(attrs, &block)
   end
-  renders_many :items, -> (open: false, rotate_icon: 180, **attrs, &block) do
+  renders_many :items, ->(open: false, rotate_icon: 180, **attrs, &block) do
     Accordion::ItemComponent.new(open, rotate_icon, attrs, &block)
   end
 
