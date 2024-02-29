@@ -1,9 +1,4 @@
 <button <%= 'disabled' if @disabled %> <%= 'type="' + @type + '"' unless @type.nil?%> class='<%= @attrs[:class] %> <%= @size_classes %>'>
-<% if @icon && @position.nil? || @position != 'right' %>
-  <%= dataIcon %>
-<%end%>
+  <%= icon if icon %>
   <%= content %>
-<%if @icon && @position === 'right'%>
-  <%= dataIcon %>
-<%end%>
 </button>
