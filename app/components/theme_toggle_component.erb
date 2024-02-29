@@ -1,4 +1,9 @@
 <!-- app/components/dark_mode/theme_toggle_component.html.erb -->
-<div data-controller="theme-toggle" class="inline-block">
-  <%= @theme ? dark : light %>
+<div data-controller="toggle-theme">
+  <div class="dark:hidden" data-action="click->toggle-theme#setDarkTheme">
+    <%= light %>
+  </div>
+  <div class="hidden dark:inline-block" data-action="click->toggle-theme#setLightTheme">
+    <%= dark %>
+  </div>
 </div>
