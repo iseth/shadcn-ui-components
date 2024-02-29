@@ -14,14 +14,13 @@ class ButtonComponent < ViewComponent::Base
 
   def initialize(variant: :primary, size: :md, icon: nil, position: nil, disabled: false, **attrs)
     @size = size
-    @size_classes = size_classes
     @icon = icon
+    @size_classes = size_classes
     @attrs = attrs
     @variant = variant
     @position = position
     @disabled = disabled
     @attrs[:class] ||= VARIANTS[@variant]
-
     @other_attrs = @attrs.except(:class).map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
   end
 
