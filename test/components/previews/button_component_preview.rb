@@ -3,56 +3,45 @@
 class ButtonComponentPreview < ViewComponent::Preview
 
   def default
-    render(ButtonComponent.new()) do |component|
-      component.with_data do
-        "Click me"
-      end
+    render(ButtonComponent.new()) do
+      "Click me"
     end
   end
 
   def primary
-    render(ButtonComponent.new(variant: :primary)) do |component|
-      component.with_data do
-        "Click me"
-      end
+    render(ButtonComponent.new(variant: :primary)) do
+      "Click me"
     end
   end
 
   def destructive
-    render(ButtonComponent.new(variant: :destructive)) do |component|
-      component.with_data do
-        "Click me"
-      end
+    render(ButtonComponent.new(variant: :destructive)) do
+      "Click me"
     end
   end
 
   def outline
-    render(ButtonComponent.new(variant: :outline)) do |component|
-      component.with_data do
-        "Click me"
-      end
+    render(ButtonComponent.new(variant: :outline)) do
+      "Click me"
     end
   end
 
   def ghost
-    render(ButtonComponent.new(variant: :ghost)) do |component|
-      component.with_data do
+    render(ButtonComponent.new(variant: :ghost)) do
         "Click me"
-      end
     end
   end
 
   def link
-    render(ButtonComponent.new(variant: :link)) do |component|
-      component.with_data do
+    render(ButtonComponent.new(variant: :link)) do
         "Click me"
-      end
     end
   end
 
 
   def icon
     render(ButtonComponent.new(variant: :outline,icon: true)) do |component|
+      "click me"
       component.with_dataIcon do
         tag.svg xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", class: "w-5 h-5" do
           tag.path fill_rule: "evenodd", d: "M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z", clip_rule: "evenodd"
