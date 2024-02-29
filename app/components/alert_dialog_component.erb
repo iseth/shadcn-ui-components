@@ -2,6 +2,9 @@
   <div data-action="click->alert-dialog#open" class="inline-block">
     <%= trigger %>
     <template data-alert-dialog-target="content">
-      <%= data%>
+      <%= render AlertDialog::ContentComponent.new do %>
+      <%= header %>
+      <%= footer %>
+      <%end%>
   </div>
 </div>

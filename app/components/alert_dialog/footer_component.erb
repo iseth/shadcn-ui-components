@@ -1,0 +1,8 @@
+<div class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
+ <%= render AlertDialog::CancelComponent.new do %>
+<%= cancel %>
+<% end %>
+ <%= render AlertDialog::ActionComponent.new do %>
+<%= action %>
+<% end %>
+</div>
