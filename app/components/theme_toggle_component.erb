@@ -1,0 +1,8 @@
+<div data-controller="toggle-theme">
+  <div class="dark:hidden" data-action="click->toggle-theme#setDarkTheme">
+    <%= light %>
+  </div>
+  <div class="hidden dark:inline-block" data-action="click->toggle-theme#setLightTheme">
+    <%= dark %>
+  </div>
+</div>
