@@ -24,6 +24,7 @@ module.exports = {
     './app/components/**/*.erb',
     './app/components/*.rb',
     './app/components/**/*.rb',
+    './test/components/previews/**/*.{erb,haml,html,slim,rb}',
     phlex_ui_path,
     // phlex_ui_pro_path
   ],

@@ -4,7 +4,7 @@ class PhlexCustomAccordionComponent < ViewComponent::Base
   end
 
   def call
-    render PhlexUI::Accordion.new(class: 'space-y-1') do
+    render PhlexUI::Accordion.new(class: "space-y-1") do
       safe_join(@items.map do |item|
         render PhlexUI::Accordion::Item.new(
           class!: "data-[accordion-open-value=true]:bg-muted hover:bg-muted rounded-lg pb-3",

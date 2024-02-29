@@ -6,7 +6,6 @@ class AspectRatio::BuilderAspectRatioComponent < ViewComponent::Base
     @attrs[:class] ||= "rounded-md overflow-hidden border shadow-sm"
   end
 
-
   def padding_bottom
     @aspect_ratio.split("/").map(&:to_f).reverse.reduce(&:fdiv) * 100
   end

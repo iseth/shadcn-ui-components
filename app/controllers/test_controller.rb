@@ -1,5 +1,5 @@
 class TestController < ApplicationController
   def index
-    render 'test/index_view'
+    render Test::IndexView
   end
 end

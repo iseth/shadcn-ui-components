@@ -45,5 +45,4 @@ class AspectRatioComponentPreview < ViewComponent::Preview
       end
     end
   end
-
 end
