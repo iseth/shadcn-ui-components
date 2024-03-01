@@ -8,7 +8,7 @@ class LinkComponentPreview < ViewComponent::Preview
   end
 
   def primary
-    render(LinkComponent.new(href: '#', variant: :primary)) do
+    render(LinkComponent.new(href: "#", variant: :primary)) do
       "Click me"
     end
   end
