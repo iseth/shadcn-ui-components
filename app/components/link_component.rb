@@ -20,7 +20,11 @@ class LinkComponent < ViewComponent::Base
     @attrs = attrs
     @variant = variant
     @position = position
-    @attrs[:class] ||= VARIANTS[@variant]
+    if @attrs[:class]
+      @attrs[:class] += " " + VARIANTS[@variant].to_s
+    else
+      @attrs[:class] = VARIANTS[@variant].to_s
+    end
 
     @other_attrs = @attrs.except(:class).map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
   end
