@@ -15,8 +15,8 @@ class LinkComponent < ViewComponent::Base
   def initialize(href: "#", variant: :primary, size: :md, icon: nil, position: nil, **attrs)
     @href = href
     @size = size
-    @size_classes = size_classes
     @icon = icon
+    @size_classes = size_classes
     @attrs = attrs
     @variant = variant
     @position = position
