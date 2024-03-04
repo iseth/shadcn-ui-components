@@ -1,0 +1,16 @@
+<%= render(AlertDialogComponent.new) do |component| %>
+  <% component.with_trigger do
+   render(ButtonComponent.new(variant: :primary)) do |component|
+      "Click me"
+    end  
+   end %>
+  <% component.with_header('Título', 'Descripción') %>
+  <% component.with_footer(
+        render(AlertDialog::ActionComponent.new) do
+        "Action"
+        end,
+        render(AlertDialog::CancelComponent.new(type: 'button')) do
+        "Cancel"
+        end
+      ) %>
+<% end %>

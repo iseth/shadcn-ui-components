@@ -1,19 +1,5 @@
 class AlertDialogComponent < ViewComponent::Base
-  renders_one :trigger, -> (**attrs, &block) do
-    render ButtonComponent.new(variant: attrs[:variant] || :primary) do |button|
-      button.with_data do
-        block.call
-      end
-    end
-  end
-
-  # renders_one :data, -> (**attrs, &block)do
-  #   render AlertDialog::ContentComponent.new do |content|
-  #     content.with_header do
-  #       block.call
-  #     end
-  #   end
-  # end
+  renders_one :trigger
 
   renders_one :header, -> (title, content_text, **attrs, &block) do
     render AlertDialog::HeaderComponent.new() do |header|
@@ -26,13 +12,13 @@ class AlertDialogComponent < ViewComponent::Base
     end
   end
 
-  renders_one :footer, -> (cancel, action, **attrs, &block) do
+  renders_one :footer, -> (cancel_component, action_component, **attrs, &block) do
     render AlertDialog::FooterComponent.new() do |footer|
       footer.with_cancel do
-        cancel
+        cancel_component
       end
       footer.with_action do
-        action
+        action_component
       end
     end
   end
