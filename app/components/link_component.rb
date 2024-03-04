@@ -18,13 +18,10 @@ class LinkComponent < ViewComponent::Base
     @icon = icon
     @size_classes = size_classes
     @attrs = attrs
-    @variant = variant
+    @variant = VARIANTS[variant]
     @position = position
-    if @attrs[:class]
-      @attrs[:class] += " " + VARIANTS[@variant].to_s
-    else
-      @attrs[:class] = VARIANTS[@variant].to_s
-    end
+    classes = "#{@variant} #{@attrs[:class]}"
+    @attrs[:class] = classes
 
     @other_attrs = @attrs.except(:class).map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
   end
