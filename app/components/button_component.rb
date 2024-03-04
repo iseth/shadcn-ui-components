@@ -17,10 +17,11 @@ class ButtonComponent < ViewComponent::Base
     @icon = icon
     @size_classes = size_classes
     @attrs = attrs
-    @variant = variant
+    @variant = VARIANTS[variant]
     @position = position
     @disabled = disabled
-    @attrs[:class] ||= VARIANTS[@variant]
+    classes = "#{@variant} #{@attrs[:class]}"
+    @attrs[:class] = classes
     @other_attrs = @attrs.except(:class).map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
   end
 

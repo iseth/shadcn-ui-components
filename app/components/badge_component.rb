@@ -36,7 +36,7 @@ class BadgeComponent < ViewComponent::Base
     lg: "px-3 py-1 text-sm"
   }
 
-  def initialize(variant: :primary, size: :md, **attrs)
+  def initialize(variant: :primary, size: :sm, **attrs)
     base_classes = "inline-flex items-center rounded-md font-medium ring-1 ring-inset"
     @variant = VARIANTS[variant]
     @size = SIZES[size]
