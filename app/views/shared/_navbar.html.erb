@@ -7,15 +7,15 @@
       <%# link_to("Docs", helpers.docs_introduction_path, class: 'hidden md:inline-block') %>
       <%# link_to("Components", helpers.docs_accordion_path, class: 'hidden md:inline-block') %>
       <%# link_to("Themes", helpers.theme_path('default'), class: 'hidden md:inline-block') %>
-      <%= render(LinkComponent.new(href: '#', variant: :ghost, class: "hidden md:inline-block")) do%>
+      <%= render(LinkComponent.new(href: '#', variant: :ghost, class: "hidden md:inline-block")) do %>
         Docs
-      <%end%>
-      <%= render(LinkComponent.new(href: '#', variant: :ghost, class: "hidden md:inline-block")) do%>
+      <% end %>
+      <%= render(LinkComponent.new(href: '#', variant: :ghost, class: "hidden md:inline-block")) do %>
         Components
-      <%end%>
-      <%= render(LinkComponent.new(href: '#', variant: :ghost, class: "hidden md:inline-block")) do%>
+      <% end %>
+      <%= render(LinkComponent.new(href: '#', variant: :ghost, class: "hidden md:inline-block")) do %>
         Themes
-      <%end%>
+      <% end %>
     </div>
     <div class="flex items-center gap-x-2 md:divide-x">
       <div class="flex items-center">

@@ -6,7 +6,10 @@
     </div>
   </div>
   <div class="relative container mx-auto max-w-3xl py-24 lg:py-32 px-4 sm:text-center flex flex-col sm:items-center gap-y-6">
-    <h1 class="scroll-m-20 text-3xl font-bold leading-normal lg:leading-normal tracking-tight lg:text-4xl">A UI component library, crafted precisely for Ruby devs<span class="text-foreground opacity-30"> who want to stay organised and build modern apps, fast.</span></h1>
+    <%= render(Typography::H1Component.new()) do %>
+      A UI component library, crafted precisely for Ruby devs
+      <span class="text-foreground opacity-30">who want to stay organised and build modern apps, fast.</span>
+    <% end %>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <%= yield %>
     </div>
