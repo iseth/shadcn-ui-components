@@ -60,5 +60,4 @@ class AvatarComponentPreview < ViewComponent::Preview
       size: :xl
     )
   end
-
 end
