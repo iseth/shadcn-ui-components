@@ -2,7 +2,7 @@ class AlertDialogComponent < ViewComponent::Base
   renders_one :trigger
 
   renders_one :header, -> (title, content_text, **attrs, &block) do
-    render AlertDialog::HeaderComponent.new() do |header|
+    render AlertDialog::HeaderComponent.new(**attrs) do |header|
       header.with_title do
         title
       end
@@ -13,7 +13,7 @@ class AlertDialogComponent < ViewComponent::Base
   end
 
   renders_one :footer, -> (cancel_component, action_component, **attrs, &block) do
-    render AlertDialog::FooterComponent.new() do |footer|
+    render AlertDialog::FooterComponent.new(**attrs) do |footer|
       footer.with_cancel do
         cancel_component
       end
@@ -23,8 +23,10 @@ class AlertDialogComponent < ViewComponent::Base
     end
   end
 
-  def initialize(open: false, **attrs)
+  def initialize(open: false, class_content: '',**attrs)
+    base_classes = "inline-block"
     @attrs = attrs
-    @attrs[:class] ||= "inline-block"
+    classes = "#{base_classes} #{@attrs[:class]}"
+    @attrs[:class] = classes
   end
 end

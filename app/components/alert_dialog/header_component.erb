@@ -1,9 +1,4 @@
-<div class="flex flex-col space-y-2 text-center sm:text-left"><!-- Before PhlexUI::AlertDialog::Title -->
-  <%# <%= render AlertDialog::TitleComponent.new do %> %>
-    <%= title %>
-    <%# <% end %> %>
-    <!-- Before PhlexUI::AlertDialog::Description -->
-    <%# <%= render AlertDialog::DescriptionComponent.new do %> %>
-    <%= description %>
-    <%# <% end %> %>
-  </div>
+<div class="<%= @attrs[:class] %>">
+  <%= title %>
+  <%= description %>
+</div>

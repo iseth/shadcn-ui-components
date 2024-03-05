@@ -4,7 +4,11 @@
       "Click me"
     end  
    end %>
-  <% component.with_header('Título', 'Descripción') %>
+  <% component.with_header(render(AlertDialog::TitleComponent.new) do
+        "Are you absolutely sure?"
+        end, render(AlertDialog::DescriptionComponent.new) do
+        "This action cannot be undone. This will permanently delete your account and remove your data from our servers."
+        end) %>
   <% component.with_footer(
         render(AlertDialog::ActionComponent.new) do
         "Action"
