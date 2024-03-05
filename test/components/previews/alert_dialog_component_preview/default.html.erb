@@ -2,8 +2,8 @@
   <% component.with_trigger do
    render(ButtonComponent.new(variant: :primary)) do |component|
       "Click me"
-    end  
-   end %>
+   end
+  end %>
   <% component.with_header(render(AlertDialog::TitleComponent.new) do
         "Are you absolutely sure?"
         end, render(AlertDialog::DescriptionComponent.new) do
