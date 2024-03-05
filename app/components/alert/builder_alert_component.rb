@@ -4,13 +4,18 @@ class Alert::BuilderAlertComponent < ViewComponent::Base
   renders_one :icon
 
   def initialize(variant: nil, **attrs)
+    base_class = "backdrop-blur relative w-full ring-1 ring-inset rounded-lg px-4 py-4 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-8"
+    base_title = "mb-1 font-medium leading-none tracking-tight"
+    base_description = "mb-1 font-medium leading-none tracking-tight"
     @variant = variant
     @variant_class = colors
     @attrs = attrs
-    @attrs[:class] ||= "backdrop-blur relative w-full ring-1 ring-inset rounded-lg px-4 py-4 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-8"
-    @attrs[:classTitle] ||= "mb-1 font-medium leading-none tracking-tight"
-    @attrs[:classDescription] ||= "text-sm [&_p]:leading-relaxed"
-    @attrs[:color] ||= @variant_class
+    classes = "#{base_class} #{@variant_class} #{@attrs[:class]}"
+    classes_title = "#{base_title} #{@attrs[:classTitle]}"
+    clasees_description = "#{base_description} #{@attrs[:classDescription]}"
+    @attrs[:class] = classes
+    @attrs[:classTitle] = classes_title
+    @attrs[:classDescription] = clasees_description
   end
 
   def colors
