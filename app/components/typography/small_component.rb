@@ -1,10 +1,8 @@
 class Typography::SmallComponent < ViewComponent::Base
   def initialize(**attrs)
+    base_class = "text-sm font-medium leading-none"
     @attrs = attrs
-    @attrs[:class] = if @attrs[:class].nil?
-      "text-sm font-medium leading-none"
-    else
-      "text-sm font-medium leading-none #{@attrs[:class]}"
-    end
+    classes = "#{base_class} #{@attrs[:class]}"
+    @attrs[:class] = classes
   end
 end

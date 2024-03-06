@@ -1,10 +1,8 @@
 class Typography::LargeComponent < ViewComponent::Base
   def initialize(**attrs)
+    base_class = "text-lg font-semibold"
     @attrs = attrs
-    @attrs[:class] = if @attrs[:class].nil?
-      "text-lg font-semibold"
-    else
-      "text-lg font-semibold #{@attrs[:class]}"
-    end
+    classes = "#{base_class} #{@attrs[:class]}"
+    @attrs[:class] = classes
   end
 end
