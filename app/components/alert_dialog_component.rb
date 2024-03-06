@@ -17,7 +17,7 @@ class AlertDialogComponent < ViewComponent::Base
       footer.with_cancel do
         cancel_component
       end
-      content
+      block.call
     end
   end
 
