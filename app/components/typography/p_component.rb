@@ -1,10 +1,8 @@
 class Typography::PComponent < ViewComponent::Base
   def initialize(**attrs)
+    base_class = "leading-7 [&:not(:first-child)]:mt-6"
     @attrs = attrs
-    @attrs[:class] = if @attrs[:class].nil?
-      "leading-7 [&:not(:first-child)]:mt-6"
-    else
-      "leading-7 [&:not(:first-child)]:mt-6 #{@attrs[:class]}"
-    end
+    classes = "#{base_class} #{@attrs[:class]}"
+    @attrs[:class] = classes
   end
 end

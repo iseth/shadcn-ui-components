@@ -3,11 +3,8 @@ class Typography::ListComponent < ViewComponent::Base
     @items = items
     @numbered = numbered
     @attrs = attrs
-    @attrs[:class] = if @attrs[:class].nil?
-      class_string(numbered)
-    else
-      "#{class_string(numbered)} #{@attrs[:class]}"
-    end
+    classes = "#{class_string(numbered)} #{@attrs[:class]}"
+    @attrs[:class] = classes
   end
 
   private

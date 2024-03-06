@@ -1,11 +1,9 @@
 class Typography::InlineLinkComponent < ViewComponent::Base
   def initialize(href: "#", **attrs) # rubocop:disable Lint/MissingSuper
     @href = href
+    base_class = "text-primary font-medium hover:underline underline-offset-4 cursor-pointer"
     @attrs = attrs
-    @attrs[:class] = if @attrs[:class].nil?
-      "text-primary font-medium hover:underline underline-offset-4 cursor-pointer"
-    else
-      "text-primary font-medium hover:underline underline-offset-4 cursor-pointer #{@attrs[:class]}"
-    end
+    classes = "#{base_class} #{@attrs[:class]}"
+    @attrs[:class] = classes
   end
 end

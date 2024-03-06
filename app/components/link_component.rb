@@ -15,12 +15,13 @@ class LinkComponent < ViewComponent::Base
   def initialize(href: "#", variant: :primary, size: :md, icon: nil, position: nil, **attrs)
     @href = href
     @size = size
-    @size_classes = size_classes
     @icon = icon
+    @size_classes = size_classes
     @attrs = attrs
-    @variant = variant
+    @variant = VARIANTS[variant]
     @position = position
-    @attrs[:class] ||= VARIANTS[@variant]
+    classes = "#{@variant} #{@attrs[:class]}"
+    @attrs[:class] = classes
 
     @other_attrs = @attrs.except(:class).map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
   end
