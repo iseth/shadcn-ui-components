@@ -39,7 +39,6 @@ class AlertComponentPreview < ViewComponent::Preview
     end
   end
 
-
   def with_destructive_variant
     render(Alert::BuilderAlertComponent.new(variant: :destructive)) do |component|
       component.with_icon do

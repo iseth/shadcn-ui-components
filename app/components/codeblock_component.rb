@@ -1,7 +1,7 @@
 class CodeblockComponent < ViewComponent::Base
   FORMATTER = ::Rouge::Formatters::HTML.new
   ROUGE_CSS = Rouge::Themes::Github.mode(:dark).render(scope: ".highlight")
-  CUSTOM_CSS =".highlight table td { padding: 5px; }
+  CUSTOM_CSS = ".highlight table td { padding: 5px; }
   .highlight table pre { margin: 0; }
   .highlight, .highlight .w {
     color: #c9d1d9;
@@ -114,7 +114,7 @@ class CodeblockComponent < ViewComponent::Base
     font-weight: bold;
   }"
 
-  def initialize(code:"def hello_world\n  puts \"Hello, worldzzzz!\"\nend", syntax: :ruby, clipboard: false, clipboard_success: "Copied!", clipboard_error: "Copy failed!", **attrs)
+  def initialize(code: "def hello_world\n  puts \"Hello, worldzzzz!\"\nend", syntax: :ruby, clipboard: false, clipboard_success: "Copied!", clipboard_error: "Copy failed!", **attrs)
     @code = code
     @syntax = syntax.to_sym
     @clipboard = clipboard
@@ -157,8 +157,8 @@ class CodeblockComponent < ViewComponent::Base
   def with_clipboard
     safe_join([
       codeblock,
-      content_tag(:div ,class: "absolute top-2 right-2") do
-        content_tag(:div, data: { clipboard_target: "trigger", action: "click->clipboard#copy" }) do
+      content_tag(:div, class: "absolute top-2 right-2") do
+        content_tag(:div, data: {clipboard_target: "trigger", action: "click->clipboard#copy"}) do
           content_tag(:button, type: "button", class: "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-6 w-6 text-white hover:text-white hover:bg-white/20") do
             content_tag(:svg, xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke_width: "1.5", stroke: "currentColor", class: "w-4 h-4") do
               content_tag(:path, stroke_linecap: "round", stroke_linejoin: "round", d: "M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6")
@@ -170,9 +170,9 @@ class CodeblockComponent < ViewComponent::Base
   end
 
   def codeblock
-    content_tag :div, data: { controller: "clipboard", clipboard_success_value:"Copied!", clipboard_error_value:"Copy failed!"}, class:"relative" do
+    content_tag :div, data: {controller: "clipboard", clipboard_success_value: "Copied!", clipboard_error_value: "Copy failed!"}, class: "relative" do
       content_tag :div do
-        content_tag :div, data: { clipboard_target: "source" } do
+        content_tag :div, data: {clipboard_target: "source"} do
           content_tag :div, **@attrs do
             content_tag :div, class: "after:content-none" do
               content_tag :pre do
@@ -184,6 +184,7 @@ class CodeblockComponent < ViewComponent::Base
       end
     end
   end
+
   def lexer
     Rouge::Lexer.find(@syntax)
   end

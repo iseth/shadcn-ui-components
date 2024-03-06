@@ -16,6 +16,6 @@ class PhlexButtonComponent < ViewComponent::Base
   private
 
   def render_icon
-    @icon.call if @icon
+    @icon&.call
   end
 end

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ButtonComponent < ViewComponent::Base
+  renders_one :icon
+
   VARIANTS = {
     primary: "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90",
     secondary: "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-opacity-80",
@@ -10,9 +12,16 @@ class ButtonComponent < ViewComponent::Base
     ghost: "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground"
   }
 
-  def initialize(variant: :primary, size: :md, icon: nil)
+  def initialize(variant: :primary, size: :md, icon: nil, position: nil, disabled: false, **attrs)
     @size = size
+    @icon = icon
     @size_classes = size_classes
+    @attrs = attrs
+    @variant = variant
+    @position = position
+    @disabled = disabled
+    @attrs[:class] ||= VARIANTS[@variant]
+    @other_attrs = @attrs.except(:class).map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
   end
 
   # private

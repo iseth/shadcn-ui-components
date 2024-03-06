@@ -1,9 +1,9 @@
 class Accordion::TriggerComponent < ViewComponent::Base
-  renders_one :default_trigger, -> (**attrs, &block) do
+  renders_one :default_trigger, ->(**attrs, &block) do
     Accordion::DefaultTriggerComponent.new(attrs, &block)
   end
 
-  renders_one :icon, -> (**attrs, &block) do
+  renders_one :icon, ->(**attrs, &block) do
     Accordion::IconComponent.new(attrs, &block)
   end
 
