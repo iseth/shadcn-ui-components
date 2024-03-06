@@ -1,10 +1,8 @@
 class Typography::H3Component < ViewComponent::Base
   def initialize(**attrs)
+    base_class = "scroll-m-20 text-xl font-semibold tracking-tight"
     @attrs = attrs
-    @attrs[:class] = if @attrs[:class].nil?
-      "scroll-m-20 text-xl font-semibold tracking-tight"
-    else
-      "scroll-m-20 text-xl font-semibold tracking-tight #{@attrs[:class]}"
-    end
+    classes = "#{base_class} #{@attrs[:class]}"
+    @attrs[:class] = classes
   end
 end
