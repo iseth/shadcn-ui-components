@@ -5,6 +5,5 @@ class AlertDialog::FooterComponent < ViewComponent::Base
     @attrs = attrs
     classes = "#{base_classes} #{@attrs[:class]}"
     @attrs[:class] = classes
-    @content = block
   end
 end
