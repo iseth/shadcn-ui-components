@@ -12,10 +12,10 @@ class Alert::BuilderAlertComponent < ViewComponent::Base
     @attrs = attrs
     classes = "#{base_class} #{@variant_class} #{@attrs[:class]}"
     classes_title = "#{base_title} #{@attrs[:classTitle]}"
-    clasees_description = "#{base_description} #{@attrs[:classDescription]}"
+    classes_description = "#{base_description} #{@attrs[:classDescription]}"
     @attrs[:class] = classes
     @attrs[:classTitle] = classes_title
-    @attrs[:classDescription] = clasees_description
+    @attrs[:classDescription] = classes_description
   end
 
   def colors
