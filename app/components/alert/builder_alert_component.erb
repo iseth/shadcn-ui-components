@@ -1,0 +1,9 @@
+<div class="<%= @attrs[:class] %>">
+  <%= icon %>
+  <%= render Alert::TitleComponent.new(class_title: @attrs[:classTitle]) do %>
+      <%= title %>
+  <% end %>
+  <%= render Alert::DescriptionComponent.new(class_description: @attrs[:classDescription]) do %>
+    <%= description %>
+  <% end %>
+</div>
