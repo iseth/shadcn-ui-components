@@ -12,13 +12,10 @@ class AlertDialogComponent < ViewComponent::Base
     end
   end
 
-  renders_one :footer, ->(cancel_component, action_component, **attrs, &block) do
-    render AlertDialog::FooterComponent.new(**attrs) do |footer|
+  renders_one :footer, ->(cancel_component,**attrs, &block) do
+    render AlertDialog::FooterComponent.new(**attrs, &block) do |footer|
       footer.with_cancel do
         cancel_component
-      end
-      footer.with_action do
-        action_component
       end
     end
   end

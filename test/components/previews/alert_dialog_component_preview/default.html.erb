@@ -10,11 +10,13 @@
         "This action cannot be undone. This will permanently delete your account and remove your data from our servers."
         end) %>
   <% component.with_footer(
-        render(AlertDialog::ActionComponent.new) do
-        "Action"
-        end,
         render(AlertDialog::CancelComponent.new(type: 'button')) do
         "Cancel"
         end
-      ) %>
+      ) do%>
+     <%=  render(AlertDialog::ActionComponent.new) do
+        "Action"
+        end%>
+        <div>this is un block</div>
+      <%end%>
 <% end %>
