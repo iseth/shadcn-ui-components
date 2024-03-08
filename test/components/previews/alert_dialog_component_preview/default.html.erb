@@ -13,10 +13,9 @@
         render(AlertDialog::CancelComponent.new(type: 'button')) do
         "Cancel"
         end
-      ) do%>
-     <%=  render(AlertDialog::ActionComponent.new) do
+      ) do %>
+     <%= render(ButtonComponent.new(variant: :primary)) do
         "Action"
-        end%>
-        <p>this is un block</p>
-      <%end%>
+        end %>
+      <% end %>
 <% end %>
