@@ -1,0 +1,21 @@
+<%= render(CardComponent.new(class: 'w-96 overflow-hidden')) do %>
+    <%= render(AspectRatio::BuilderAspectRatioComponent.new(aspect_ratio: "16/9", class: "border-b")) do |component| %>
+      <% component.with_image do %>
+        <img src='/assets/image-test.jpg' alt='Placeholder' loading='lazy'>
+     <% end %>
+    <% end %>
+    <%= render(Card::HeaderComponent.new) do %>
+      <%= render(Card::TitleComponent.new) do %>
+        Introducing PhlexUI
+      <% end %>
+       <%= render(Card::DescriptionComponent.new) do %>
+        Kickstart your project today!
+      <% end %>
+    <% end %>
+
+    <%= render(Card::FooterComponent.new(class: 'flex justify-end')) do %>
+       <%= render(ButtonComponent.new(variant: :outline))do %>
+        Get started
+      <% end %>
+    <% end %>
+<% end %>

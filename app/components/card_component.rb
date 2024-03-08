@@ -1,6 +1,6 @@
-class Typography::MutedComponent < ViewComponent::Base
+class CardComponent < ViewComponent::Base
   def initialize(**attrs)
-    base_class = "text-sm text-muted-foreground"
+    base_class = "rounded-xl border bg-background shadow"
     @attrs = attrs
     classes = "#{base_class} #{@attrs[:class]}"
     @attrs[:class] = classes
