@@ -1,5 +1,4 @@
 class AvatarComponentPreview < ViewComponent::Preview
-
   def builder_with_image
     render Avatar::BuilderComponent.new(src: "https://avatars.githubusercontent.com/u/246692?v=4", alt: "joeldrapper", initials: "JD")
   end
@@ -19,5 +18,4 @@ class AvatarComponentPreview < ViewComponent::Preview
 
   def sizes_only_fallback
   end
-
 end
