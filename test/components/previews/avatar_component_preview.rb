@@ -1,63 +1,23 @@
 class AvatarComponentPreview < ViewComponent::Preview
-  def default
-    render AvatarComponent.new(
-      src: "https://avatars.githubusercontent.com/u/246692?v=4",
-      alt: "Descripción del avatar",
-      initials: "JD",
-      size: :lg
-    )
+
+  def builder_with_image
+    render Avatar::BuilderComponent.new(src: "https://avatars.githubusercontent.com/u/246692?v=4", alt: "joeldrapper", initials: "JD")
+  end
+
+  def builder_without_image
+    render Avatar::BuilderComponent.new(initials: "JD")
+  end
+
+  def image_and_fallback
   end
 
   def only_fallback
-    render AvatarComponent.new(
-      alt: "Descripción del avatar",
-      initials: "JD",
-      size: :lg
-    )
   end
 
-  def size_xs
-    render AvatarComponent.new(
-      src: "https://avatars.githubusercontent.com/u/246692?v=4",
-      alt: "Descripción del avatar",
-      initials: "JD",
-      size: :xs
-    )
+  def sizes
   end
 
-  def size_sm
-    render AvatarComponent.new(
-      src: "https://avatars.githubusercontent.com/u/246692?v=4",
-      alt: "Descripción del avatar",
-      initials: "JD",
-      size: :sm
-    )
+  def sizes_only_fallback
   end
 
-  def size_md
-    render AvatarComponent.new(
-      src: "https://avatars.githubusercontent.com/u/246692?v=4",
-      alt: "Descripción del avatar",
-      initials: "JD",
-      size: :md
-    )
-  end
-
-  def size_lg
-    render AvatarComponent.new(
-      src: "https://avatars.githubusercontent.com/u/246692?v=4",
-      alt: "Descripción del avatar",
-      initials: "JD",
-      size: :lg
-    )
-  end
-
-  def size_xl
-    render AvatarComponent.new(
-      src: "https://avatars.githubusercontent.com/u/246692?v=4",
-      alt: "Descripción del avatar",
-      initials: "JD",
-      size: :xl
-    )
-  end
 end

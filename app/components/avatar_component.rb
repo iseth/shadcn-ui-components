@@ -7,10 +7,11 @@ class AvatarComponent < ViewComponent::Base
     xl: "h-20 w-20 text-3xl"
   }
 
-  def initialize(src: nil, alt: nil, initials: nil, size: :md)
-    @src = src
-    @alt = alt
-    @initials = initials || "JD"
+  def initialize(size: :md, **attrs)
+    base_classes = "relative flex shrink-0 overflow-hidden rounded-full"
+    @attrs = attrs
     @size = SIZES[size]
+    classes = "#{base_classes} #{@size} #{@attrs[:class]}"
+    @attrs[:class] = classes
   end
 end
