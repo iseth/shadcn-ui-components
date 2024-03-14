@@ -1,9 +1,0 @@
-<div data-controller="clipboard" data-clipboard-success-value="<%= @success %>" data-clipboard-error-value="<%= @error %>" class="<%= @attrs[:class] %>">
-  <%= content %>
-  <%= render(Codeblock::PopoverComponent.new(type: :success)) do %>
-    <%= @success %>
-  <% end %>
-  <%= render(Codeblock::PopoverComponent.new(type: :error)) do %>
-    <%= @error %>
-  <% end %>
-</div>

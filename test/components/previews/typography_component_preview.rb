@@ -12,7 +12,7 @@ class TypographyComponentPreview < ViewComponent::Preview
   end
 
   def p
-    render(Typography::PComponent.new) do
+    render(Ui::Typography::PComponent.new) do
       "This is an P tag"
     end
   end
@@ -21,7 +21,7 @@ class TypographyComponentPreview < ViewComponent::Preview
   end
 
   def list
-    render(Typography::ListComponent.new(items: [
+    render(Ui::Typography::ListComponent.new(items: [
       "Phlex is fast",
       "Phlex is easy to use",
       "Phlex is awesome"
@@ -29,7 +29,7 @@ class TypographyComponentPreview < ViewComponent::Preview
   end
 
   def numbered_list
-    render(Typography::ListComponent.new(items: [
+    render(Ui::Typography::ListComponent.new(items: [
       "Phlex is fast",
       "Phlex is easy to use",
       "Phlex is awesome"
@@ -37,31 +37,31 @@ class TypographyComponentPreview < ViewComponent::Preview
   end
 
   def inline_code
-    render(Typography::InlineCodeComponent.new) do
+    render(Ui::Typography::InlineCodeComponent.new) do
       "This is an inline code block"
     end
   end
 
   def lead
-    render(Typography::LeadComponent.new) do
+    render(Ui::Typography::LeadComponent.new) do
       "A modal dialog that interrupts the user with important content and expects a response."
     end
   end
 
   def large
-    render(Typography::LargeComponent.new) do
+    render(Ui::Typography::LargeComponent.new) do
       "Are you sure absolutely sure?"
     end
   end
 
   def small
-    render(Typography::SmallComponent.new) do
+    render(Ui::Typography::SmallComponent.new) do
       "Email address"
     end
   end
 
   def muted
-    render(Typography::MutedComponent.new) do
+    render(Ui::Typography::MutedComponent.new) do
       "Enter your email address."
     end
   end
