@@ -1,4 +1,4 @@
-<%= render AccordionComponent.new(class: 'space-y-1') do |accordion| %>
+<%= render Ui::AccordionComponent.new(class: 'space-y-1') do |accordion| %>
   <%= accordion.with_item(class: "data-[accordion-open-value=true]:bg-muted hover:bg-muted rounded-lg pb-3", rotate_icon: 135) do |item| %>
     <%= item.with_trigger(class: "w-full rounded-lg") do |trigger| %>
       <div class="p-6 pb-3 pl-16 relative text-left">

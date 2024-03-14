@@ -1,7 +1,7 @@
 # app/components/previews/my_view_component_preview.rb
 class AccordionComponentPreview < ViewComponent::Preview
   def default
-    render Accordion::BuilderComponent.new do |accordion|
+    render Ui::Accordion::BuilderComponent.new do |accordion|
       accordion.with_item("Item 1", "Content 1")
       accordion.with_item("Item 2", "Content 2")
       accordion.with_item("Item 3", "Content 3")
