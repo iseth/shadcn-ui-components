@@ -1,0 +1,17 @@
+<% if @numbered %>
+  <ol class='<%= @attrs[:class] %>'>
+    <% @items.each do |item| %>
+      <%= render(Ui::Typography::ListItemComponent.new)do %>
+        <%= item %>
+      <% end %>
+    <% end %>
+  </ol>
+<% else %>
+  <ul class='<%= @attrs[:class] %>'>
+    <% @items.each do |item| %>
+      <%= render(Ui::Typography::ListItemComponent.new)do %>
+        <%= item %>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
