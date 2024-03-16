@@ -1,0 +1,18 @@
+<li role="status" class="group pointer-events-auto relative flex w-full items-center justify-between space-x-2 overflow-hidden rounded-md p-4 pr-6 pt-3.5 shadow-lg transition-all data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full border <%= notice? ? 'bg-background text-foreground' : '' %> <%= alert? ? 'destructive group border-destructive bg-destructive text-destructive-foreground' : '' %>" aria_live="off" aria_atomic="true" tabindex="0" data_state="open" data_controller="dismissable" style="user-select:none; touch-action:none">
+  <div class="grid gap-1">
+    <% if @title %>
+      <div class="text-sm font-semibold [&+div]:text-xs">
+        <%= @title %>
+      </div>
+      <div class="text-sm opacity-90">
+        <%= @description %>
+      </div>
+    <% else %>
+      <div><%= @description %></div>
+    <% end %>
+  </div>
+  <%= content %>
+  <button type="button" class="absolute right-1 top-1 rounded-md p-1 opacity-0 transition-opacity focus:opacity-100 focus:outline-none focus:ring-1 focus:ring-ring group-hover:opacity-100 <%= notice? ? 'text-foreground/50 hover:text-foreground' : '' %> <%= alert? ? 'destructive group border-destructive bg-destructive text-destructive-foreground' : '' %>" data-action="click->dismissable#dismiss">
+    <%= x_icon %>
+  </button>
+</li>

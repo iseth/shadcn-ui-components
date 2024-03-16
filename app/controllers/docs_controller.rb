@@ -20,5 +20,4 @@ class DocsController < ApplicationController
   def alert_dialog
     render Docs::AlertDialogView.new
   end
-
 end

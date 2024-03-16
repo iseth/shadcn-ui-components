@@ -93,7 +93,7 @@ class Shared::Menu < ApplicationComponent
     [
       {name: "Accordion", path: "#"},
       {name: "Alert", path: "#"},
-      {name: "Alert Dialog", path: "#"},
+      {name: "Alert Dialog", path: "#"}
     ]
   end
 
@@ -144,7 +144,6 @@ class Shared::Menu < ApplicationComponent
       end
     end
   end
-
 
   # def main_link(name, path)
   #   current_path = path == helpers.request.path
