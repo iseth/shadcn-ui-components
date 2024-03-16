@@ -81,8 +81,6 @@ class MenuComponent < ViewComponent::Base
     end
   end
 
-
-
   def premium_status(component)
     if component[:premium]
       svg(
@@ -102,6 +100,7 @@ class MenuComponent < ViewComponent::Base
   end
 
   private
+
   def css_classes(current_path)
     base_classes = "group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline"
     if current_path
@@ -110,6 +109,4 @@ class MenuComponent < ViewComponent::Base
       base_classes + " text-muted-foreground"
     end
   end
-
-
 end

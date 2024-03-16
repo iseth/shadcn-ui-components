@@ -27,5 +27,4 @@ class FlashComponent < ViewComponent::Base
   def alert? = @variant == :alert
 
   def notice? = @variant == :notice
-
 end

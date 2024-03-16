@@ -22,5 +22,4 @@ class HeaderComponent < ViewComponent::Base
       )
     end
   end
-
 end
