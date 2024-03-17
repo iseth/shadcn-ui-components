@@ -1,0 +1,25 @@
+<%= render(Ui::TabsComponent.new(default:"account",class: 'w-96')) do %>
+  <%= render(Ui::Tabs::ListComponent.new) do %>
+    <%= render(Ui::Tabs::TriggerComponent.new(value:"account")) do %>
+      Account
+    <% end %>
+    <%= render(Ui::Tabs::TriggerComponent.new(value:"password")) do %>
+      Password
+    <% end %>
+  <% end %>
+  <%= render(Ui::Tabs::ContentComponent.new(value:"account")) do %>
+    <div class="rounded-lg border p-6 space-y-4 bg-background text-foreground">
+        <div>
+            <h1>Hello<h1>
+        </div>
+    </div>
+  <% end %>
+  <%= render(Ui::Tabs::ContentComponent.new(value:"password")) do %>
+    <div class="rounded-lg border p-6 space-y-4 bg-background text-foreground">
+        <div>
+            <h1>Bye<h1>
+            <h1>Bye<h1>
+        </div>
+    </div>
+  <% end %>
+<% end %>
