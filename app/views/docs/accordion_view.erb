@@ -1,1 +1,22 @@
-<p>a</p>
+<div class="max-w-2xl mx-auto w-full py-10 space-y-10">
+  <%=render(HeaderComponent.new(title:"Accordion", description: "A vertically stacked set of interactive headings that each reveal a section of content."))%>
+  <%= render(Ui::Typography::H2Component.new) do %>
+    Usage
+  <% end %>
+  <%= render(VisualCodeExampleComponent.new(title: "With Builder", context: self)) do %>
+    <%
+    accordion_default = <<-RUBY.strip_heredoc
+        render Ui::Accordion::BuilderComponent.new do |accordion|
+          accordion.with_item("Item 1", "Content 1")
+          accordion.with_item("Item 2", "Content 2")
+          accordion.with_item("Item 3", "Content 3")
+        end
+    RUBY
+    %>
+    <%= accordion_default %>
+  <% end %>
+  <%= render(VisualCodeExampleComponent.new(title: "With Builder", context: self, cod:true)) do %>
+     <% custom_accordion = ApplicationController.new.render_to_string('docs/accordion_template', layout: false) %>
+  <%= custom_accordion %>
+  <% end %>
+</div>

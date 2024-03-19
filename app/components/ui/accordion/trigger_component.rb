@@ -1,10 +1,10 @@
 class Ui::Accordion::TriggerComponent < ViewComponent::Base
   renders_one :default_trigger, ->(**attrs, &block) do
-    Accordion::DefaultTriggerComponent.new(attrs, &block)
+    Ui::Accordion::DefaultTriggerComponent.new(attrs, &block)
   end
 
   renders_one :icon, ->(**attrs, &block) do
-    Accordion::IconComponent.new(attrs, &block)
+    Ui::Accordion::IconComponent.new(attrs, &block)
   end
 
   def initialize(attrs = {}, &block)

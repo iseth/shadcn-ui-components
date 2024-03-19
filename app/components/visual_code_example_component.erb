@@ -1,0 +1,59 @@
+<div id="<%= @title %>">
+  <div class="relative">
+    <%= render(Ui::TabsComponent.new(default:"preview")) do %>
+      <div class="flex justify-between items-end mb-4 gap-x-2">
+        <%# header %>
+        <div>
+          <% if @title %>
+            <div class="flex items-center gap-x-2 mb-1">
+              <%= render(Ui::Typography::H4Component.new) do %>
+                <%= @title.capitalize %>
+              <% end %>
+            </div>
+          <% end %>
+          <% if @description %>
+            <p><%= @description %></p>
+          <% end %>
+        </div>
+        <%# spacer  %>
+        <div class="flex-grow">
+        </div>
+        <%# triggers %>
+        <%= render(Ui::Tabs::ListComponent.new) do %>
+          <%= render(Ui::Tabs::TriggerComponent.new(value:"preview")) do %>
+            <span>Preview</span>
+          <%end%>
+          <%= render(Ui::Tabs::TriggerComponent.new(value:"code")) do %>
+            <span>Code</span>
+          <%end%>
+        <% end %>
+        <%# triggers %>
+      </div>
+      <%# Content %>
+      <%# preview %>
+      <%= render(Ui::Tabs::ContentComponent.new(value:"preview")) do %>
+        <div class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 relative rounded-md border">
+          <div class="preview flex min-h-[350px] w-full justify-center p-10 items-center">
+            <% if @cod %>
+              <%= content %>
+            <% else %>
+              <% decoded_code = CGI.unescapeHTML(content) %>
+              <%= @context.instance_eval(decoded_code) %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <%# preview %>
+      <%# code %>
+      <%= render(Ui::Tabs::ContentComponent.new(value:"code")) do %>
+        <div class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 relative rounded-md border">
+          <div class="preview flex min-h-[350px] w-full justify-center p-10 items-center">
+            <%= render(Ui::Codeblock::BuilderCodeblockComponent.new(code:content, syntax: :erb, class: "-m-px")) %>
+          </div>
+        </div>
+      <% end %>
+      <%# code %>
+      <%# Content %>
+    <% end %>
+  </div>
+</div>
