@@ -6,6 +6,8 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+require "view_component"
+
 module ShadcnUiComponents
   class Application < Rails::Application
     config.autoload_paths << "#{root}/app/views"
@@ -26,5 +28,20 @@ module ShadcnUiComponents
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # ----------------------------------------------------------- #
+
+    # ViewComponent configuration
+    #
+    # Lookbook will respect any ViewComponent config options so
+    # additional preview paths etc do not need to be additionally
+    # specified in the Lookbook config.
+
+    # config.view_component.preview_paths << "#{root}/app/components"
+
+    config.view_component.default_preview_layout = "lookbook"
+
+    # config.view_component.preview_controller = "LookbookController"
+    #
+    # config.view_component.show_previews = true
   end
 end
