@@ -1,4 +1,4 @@
-class Typography::ListComponent < ViewComponent::Base
+class UI::Typography::ListComponent < ViewComponent::Base
   def initialize(items: [], numbered: false, **attrs)
     @items = items
     @numbered = numbered

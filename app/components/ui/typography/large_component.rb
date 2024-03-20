@@ -1,6 +1,6 @@
-class Typography::H3Component < ViewComponent::Base
+class UI::Typography::LargeComponent < ViewComponent::Base
   def initialize(**attrs)
-    base_class = "scroll-m-20 text-xl font-semibold tracking-tight"
+    base_class = "text-lg font-semibold"
     @attrs = attrs
     classes = "#{base_class} #{@attrs[:class]}"
     @attrs[:class] = classes

@@ -1,6 +1,6 @@
-class Typography::SmallComponent < ViewComponent::Base
+class UI::Card::DescriptionComponent < ViewComponent::Base
   def initialize(**attrs)
-    base_class = "text-sm font-medium leading-none"
+    base_class = "text-sm text-muted-foreground"
     @attrs = attrs
     classes = "#{base_class} #{@attrs[:class]}"
     @attrs[:class] = classes

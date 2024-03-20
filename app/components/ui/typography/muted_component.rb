@@ -1,4 +1,4 @@
-class Typography::MutedComponent < ViewComponent::Base
+class UI::Typography::MutedComponent < ViewComponent::Base
   def initialize(**attrs)
     base_class = "text-sm text-muted-foreground"
     @attrs = attrs

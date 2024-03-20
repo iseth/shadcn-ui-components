@@ -1,19 +1,19 @@
-<%= render(CardComponent.new(class: 'w-96 overflow-hidden')) do %>
-    <%= render(AspectRatio::BuilderAspectRatioComponent.new(aspect_ratio: "16/9", class: "border-b")) do |component| %>
+<%= render(UI::Card::Component.new(class: 'w-96 overflow-hidden')) do %>
+    <%= render(UI::AspectRatio::Component.new(aspect_ratio: "16/9", class: "border-b")) do |component| %>
       <% component.with_image do %>
         <img src='/assets/image-test.jpg' alt='Placeholder' loading='lazy'>
      <% end %>
     <% end %>
-    <%= render(Card::HeaderComponent.new) do %>
-      <%= render(Card::TitleComponent.new) do %>
+    <%= render(UI::Card::HeaderComponent.new) do %>
+      <%= render(UI::Card::TitleComponent.new) do %>
         Introducing PhlexUI
       <% end %>
-       <%= render(Card::DescriptionComponent.new) do %>
+       <%= render(UI::Card::DescriptionComponent.new) do %>
         Kickstart your project today!
       <% end %>
     <% end %>
 
-    <%= render(Card::FooterComponent.new(class: 'flex justify-end')) do %>
+    <%= render(UI::Card::FooterComponent.new(class: 'flex justify-end')) do %>
        <%= render(UI::Button::Component.new(variant: :outline))do %>
         Get started
       <% end %>
