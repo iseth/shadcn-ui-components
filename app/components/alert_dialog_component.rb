@@ -1,9 +1,30 @@
 class AlertDialogComponent < ViewComponent::Base
-  def initialize(trigger_text:, title:, description:, cancel_text:, action_text:)
-    @trigger_text = trigger_text
-    @title = title
-    @description = description
-    @cancel_text = cancel_text
-    @action_text = action_text
+  renders_one :trigger
+
+  renders_one :header, ->(title, content_text, **attrs, &block) do
+    render AlertDialog::HeaderComponent.new(**attrs) do |header|
+      header.with_title do
+        title
+      end
+      header.with_description do
+        content_text
+      end
+    end
+  end
+
+  renders_one :footer, ->(cancel_component, **attrs, &block) do
+    render AlertDialog::FooterComponent.new(**attrs, &block) do |footer|
+      footer.with_cancel do
+        cancel_component
+      end
+      block.call
+    end
+  end
+
+  def initialize(open: false, **attrs)
+    base_classes = "inline-block"
+    @attrs = attrs
+    classes = "#{base_classes} #{@attrs[:class]}"
+    @attrs[:class] = classes
   end
 end

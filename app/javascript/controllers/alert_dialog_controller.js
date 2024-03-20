@@ -11,7 +11,6 @@ export default class extends Controller {
   }
 
   open(e) {
-    console.log(this.contentTarget.innerHTML)
     document.body.insertAdjacentHTML('beforeend', this.contentTarget.innerHTML)
   }
 }
