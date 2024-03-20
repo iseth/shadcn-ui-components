@@ -1,4 +1,4 @@
-class CardComponent < ViewComponent::Base
+class UI::Card::Component < ViewComponent::Base
   def initialize(**attrs)
     base_class = "rounded-xl border bg-background shadow"
     @attrs = attrs

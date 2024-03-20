@@ -1,6 +1,6 @@
-class Card::HeaderComponent < ViewComponent::Base
+class UI::Card::TitleComponent < ViewComponent::Base
   def initialize(**attrs)
-    base_class = "flex flex-col space-y-1.5 p-6"
+    base_class = "font-semibold leading-none tracking-tight"
     @attrs = attrs
     classes = "#{base_class} #{@attrs[:class]}"
     @attrs[:class] = classes

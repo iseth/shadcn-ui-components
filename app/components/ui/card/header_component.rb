@@ -1,6 +1,6 @@
-class Card::FooterComponent < ViewComponent::Base
+class UI::Card::HeaderComponent < ViewComponent::Base
   def initialize(**attrs)
-    base_class = "items-center p-6 pt-0"
+    base_class = "flex flex-col space-y-1.5 p-6"
     @attrs = attrs
     classes = "#{base_class} #{@attrs[:class]}"
     @attrs[:class] = classes

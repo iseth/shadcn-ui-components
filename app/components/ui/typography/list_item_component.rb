@@ -1,4 +1,4 @@
-class Typography::ListItemComponent < ViewComponent::Base
+class UI::Typography::ListItemComponent < ViewComponent::Base
   def initialize(**attrs)
     base_class = "leading-7"
     @attrs = attrs
