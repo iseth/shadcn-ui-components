@@ -1,4 +1,4 @@
-class AlertDialog::FooterComponent < ViewComponent::Base
+class UI::AlertDialog::FooterComponent < ViewComponent::Base
   renders_one :cancel
   def initialize(attrs = {}, &block)
     base_classes = "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"

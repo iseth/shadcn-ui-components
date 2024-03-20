@@ -1,4 +1,4 @@
-class AspectRatio::BuilderAspectRatioComponent < ViewComponent::Base
+class UI::AspectRatio::Component < ViewComponent::Base
   renders_one :image
   def initialize(aspect_ratio:, **attrs)
     base_classes = "bg-muted absolute inset-0 [&>img]:object-cover [&>img]:absolute [&>img]:h-full [&>img]:w-full [&>img]:inset-0 [&>img]:text-transparent"

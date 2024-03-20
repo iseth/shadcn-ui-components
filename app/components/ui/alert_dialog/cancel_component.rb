@@ -1,4 +1,4 @@
-class AlertDialog::CancelComponent < ViewComponent::Base
+class UI::AlertDialog::CancelComponent < ViewComponent::Base
   def initialize(variant: :outline, size: :md, icon: nil, position: nil, disabled: false, **attrs)
     @variant = variant
     @size = size

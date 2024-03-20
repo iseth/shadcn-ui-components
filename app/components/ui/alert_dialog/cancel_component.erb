@@ -1,0 +1,5 @@
+<%= render(UI::Button::Component.new(variant: @variant, size: @size, icon: @icon, position: @position, disabled: @disabled, **@attrs)) do |component| %>
+  <div data-action="click->dismissable#dismiss">
+    <%= content %>
+  </div>
+<%end %>

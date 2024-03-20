@@ -1,8 +1,8 @@
-class AlertDialogComponent < ViewComponent::Base
+class UI::AlertDialog::Component < ViewComponent::Base
   renders_one :trigger
 
   renders_one :header, ->(title, content_text, **attrs, &block) do
-    render AlertDialog::HeaderComponent.new(**attrs) do |header|
+    render UI::AlertDialog::HeaderComponent.new(**attrs) do |header|
       header.with_title do
         title
       end
@@ -13,7 +13,7 @@ class AlertDialogComponent < ViewComponent::Base
   end
 
   renders_one :footer, ->(cancel_component, **attrs, &block) do
-    render AlertDialog::FooterComponent.new(**attrs, &block) do |footer|
+    render UI::AlertDialog::FooterComponent.new(**attrs, &block) do |footer|
       footer.with_cancel do
         cancel_component
       end

@@ -1,4 +1,4 @@
-class Avatar::ImageComponent < ViewComponent::Base
+class UI::Avatar::ImageComponent < ViewComponent::Base
   def initialize(src:, alt: "", **attrs)
     base_classes = "aspect-square h-full w-full"
     @attrs = attrs
