@@ -1,0 +1,10 @@
+<%= render(UI::Avatar::Component.new(size: @size, attrs: @attrs)) do %>
+  <% if @src %>
+    <%= render(UI::Avatar::ImageComponent.new(src: @src, alt: @alt ))%>
+  <% end %>
+   <% if @initials %>
+    <%= render(UI::Avatar::FallbackComponent.new) do%>
+      <%= @initials %>
+    <% end %>
+  <% end %>
+<% end %>

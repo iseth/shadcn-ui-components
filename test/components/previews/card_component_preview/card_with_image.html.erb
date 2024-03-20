@@ -15,10 +15,10 @@
     end %>
     <% end %>
     <%= render(Card::FooterComponent.new(class: 'flex justify-end gap-x-2')) do %>
-       <%= render(ButtonComponent.new(variant: :outline))do %>
+       <%= render(UI::Button::Component.new(variant: :outline))do %>
         See more
       <% end %>
-      <%= render(ButtonComponent.new(variant: :primary))do %>
+      <%= render(UI::Button::Component.new(variant: :primary))do %>
         Click me
       <% end %>
     <% end %>

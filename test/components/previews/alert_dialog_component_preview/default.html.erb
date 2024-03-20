@@ -1,20 +1,20 @@
-<%= render(AlertDialogComponent.new) do |component| %>
+<%= render(UI::AlertDialog::Component.new) do |component| %>
   <% component.with_trigger do
-   render(ButtonComponent.new(variant: :primary)) do |component|
+   render(UI::Button::Component.new(variant: :primary)) do |component|
       "Click me"
    end
   end %>
-  <% component.with_header(render(AlertDialog::TitleComponent.new) do
+  <% component.with_header(render(UI::AlertDialog::TitleComponent.new) do
         "Are you absolutely sure?"
-        end, render(AlertDialog::DescriptionComponent.new) do
+        end, render(UI::AlertDialog::DescriptionComponent.new) do
         "This action cannot be undone. This will permanently delete your account and remove your data from our servers."
         end) %>
   <% component.with_footer(
-        render(AlertDialog::CancelComponent.new(type: 'button')) do
+        render(UI::AlertDialog::CancelComponent.new(type: 'button')) do
         "Cancel"
         end
       ) do %>
-     <%= render(ButtonComponent.new(variant: :primary)) do
+     <%= render(UI::Button::Component.new(variant: :primary)) do
         "Action"
         end %>
       <% end %>

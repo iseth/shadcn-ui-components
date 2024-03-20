@@ -14,7 +14,7 @@
     <% end %>
 
     <%= render(Card::FooterComponent.new(class: 'flex justify-end')) do %>
-       <%= render(ButtonComponent.new(variant: :outline))do %>
+       <%= render(UI::Button::Component.new(variant: :outline))do %>
         Get started
       <% end %>
     <% end %>

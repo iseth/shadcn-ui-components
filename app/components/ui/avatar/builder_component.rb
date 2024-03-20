@@ -1,4 +1,4 @@
-class Avatar::BuilderComponent < ViewComponent::Base
+class UI::Avatar::BuilderComponent < ViewComponent::Base
   def initialize(size: :md, src: nil, alt: nil, initials: nil, **attrs)
     base_classes = "relative flex shrink-0 overflow-hidden rounded-full"
     @attrs = attrs
