@@ -1,6 +1,6 @@
-class Accordion::BuilderComponent < ViewComponent::Base
+class UI::Accordion::BuilderComponent < ViewComponent::Base
   renders_many :items, ->(title, content_text, open: false, &block) do
-    render Accordion::ItemComponent.new(open) do |item_component|
+    render UI::Accordion::ItemComponent.new(open) do |item_component|
       item_component.with_trigger do |trigger|
         trigger.with_default_trigger do
           title

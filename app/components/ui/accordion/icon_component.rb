@@ -1,4 +1,4 @@
-class Accordion::IconComponent < ViewComponent::Base
+class UI::Accordion::IconComponent < ViewComponent::Base
   def initialize(attrs = {})
     @attrs = attrs
     default_classes = "opacity-50"
