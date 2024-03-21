@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class LinkComponent < ViewComponent::Base
+class UI::Link::Component < ViewComponent::Base
   renders_one :icon
 
   VARIANTS = {

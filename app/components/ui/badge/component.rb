@@ -1,4 +1,4 @@
-class BadgeComponent < ViewComponent::Base
+class UI::Badge::Component < ViewComponent::Base
   VARIANTS = {
     primary: "text-primary bg-primary/5 ring-primary/20",
     secondary: "text-secondary bg-secondary/10 ring-secondary/20",

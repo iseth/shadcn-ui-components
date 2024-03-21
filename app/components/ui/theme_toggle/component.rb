@@ -1,4 +1,4 @@
-class ThemeToggleComponent < ViewComponent::Base
+class UI::ThemeToggle::Component < ViewComponent::Base
   renders_one :light
   renders_one :dark
 

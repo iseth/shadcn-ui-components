@@ -1,9 +1,7 @@
 class CodeblockComponentPreview < ViewComponent::Preview
-  def default
-    render CodeblockComponent.new(code: "def hello_world\n  puts \"Hello, world!\"\nend", syntax: :ruby, clipboard: true)
+  def with_clipboard
   end
 
-  def with_clipboard
-    render CodeblockComponent.new(code: "def hello_world\n  puts \"Hello, world!\"\nend", syntax: :ruby)
+  def without_clipboard
   end
 end

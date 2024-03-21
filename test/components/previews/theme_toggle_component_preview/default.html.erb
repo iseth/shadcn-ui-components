@@ -1,4 +1,4 @@
-<%= render(ThemeToggleComponent.new) do |component| %>
+<%= render(UI::ThemeToggle::Component.new) do |component| %>
   <% component.with_light do %>
     <%= render(UI::Button::Component.new(variant: :outline, icon: true)) do |component| %>
       <% component.with_icon do %>
