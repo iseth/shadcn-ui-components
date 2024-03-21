@@ -85,3 +85,5 @@ gem "pry"
 gem "standard", "~> 1.34"
 
 gem "erb_lint", "~> 0.5.0"
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
